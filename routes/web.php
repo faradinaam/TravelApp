@@ -54,7 +54,10 @@ Route::get('posts/{post:slug}', [PostController::class, 'show']);
 
 
 Route::get('/dashboard', function () {
-    return view('dashboard/dashboard', [
+    return view('dashboard.index', [
         "title" => "Dashboard"
     ]);
 });
+Route::get('/dashboard/posts/create', [PostController::class, 'create']);
+Route::post('/dashboard/posts', [PostController::class, 'store']);
+
