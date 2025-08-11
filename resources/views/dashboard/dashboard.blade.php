@@ -19,8 +19,12 @@
                 <a href="/dashboard/posts/create" class="nav-link text-white">Tambah Post</a>
             </li>
             <li class="nav-item">
+                <a href="/dashboard/posts/manage" class="nav-link text-white">Manage</a>
+            </li>
+            <li class="nav-item">
                 <a href="/posts" class="nav-link text-white">Lihat Post</a>
             </li>
+
         </ul>
     </div>
 

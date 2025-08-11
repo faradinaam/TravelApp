@@ -33,6 +33,7 @@ Route::get('/about', function () {
     ]);
 });
 
+// Read (menampilkan semua data)
 Route::get('/posts', [PostController::class, 'index']);
 
 
@@ -58,6 +59,29 @@ Route::get('/dashboard', function () {
         "title" => "Dashboard"
     ]);
 });
-Route::get('/dashboard/posts/create', [PostController::class, 'create']);
-Route::post('/dashboard/posts', [PostController::class, 'store']);
+// // Create (form tambah)
+// Route::get('/dashboard/posts/create', [PostController::class, 'create']);
+// Route::post('/dashboard/posts', [PostController::class, 'store']);
 
+// // Edit (form edit)
+// Route::get('/posts/{id}/edit', [PostController::class, 'edit'])->name('posts.edit');
+// Route::put('/posts/{id}', [PostController::class, 'update'])->name('posts.update');
+
+// // Delete (hapus data)
+// Route::delete('/posts/{id}', [PostController::class, 'destroy'])->name('posts.destroy');
+
+
+
+// routes/web.php
+Route::get('/dashboard/posts/create', [PostController::class, 'create'])->name('posts.create');
+Route::post('/dashboard/posts', [PostController::class, 'store'])->name('posts.store');
+Route::get('/dashboard/posts/{id}/edit', [PostController::class, 'edit'])->name('posts.edit');
+Route::put('/dashboard/posts/{id}', [PostController::class, 'update'])->name('posts.update');
+Route::delete('/dashboard/posts/{id}', [PostController::class, 'destroy'])->name('posts.destroy');
+
+Route::get('/dashboard/posts', [PostController::class, 'index'])->name('dashboard.posts.index');
+
+Route::get('dashboard/posts/manage', [PostController::class, 'manage'])->name('posts/manage');
+
+
+// Route::get('/posts/manage', [PostController::class, 'manage'])->name('posts.manage');
